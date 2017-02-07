@@ -1,0 +1,15 @@
+
+ <!DOCTYPE html>
+<html>
+
+<head>
+<title>Grass Spider</title>
+</head>
+<body background="https://www.alienwarefxthemes.com/wp-content/gallery/alienware-backgrounds/Alienware-Desktop-Background-Blue-Alienware-Head-3360x2100.jpg" style="color:white;">
+<h1> Goal </h1>
+<p> I need a computer for gaming. Which I can also use for school work. </p>
+<p> For this, I want accesories for gaming. I need surround sound headphones, a keyboard, a mouse and of course, a monitor. I prefer it to be 1080p with a refresh rate of 144Hz. </p>
+
+</body>
+
+</html>
