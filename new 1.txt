@@ -5,11 +5,31 @@
 <head>
 <title>Grass Spider</title>
 </head>
-<body background="https://www.alienwarefxthemes.com/wp-content/gallery/alienware-backgrounds/Alienware-Desktop-Background-Blue-Alienware-Head-3360x2100.jpg" style="color:white;">
+<body>
 <h1> Goal </h1>
-<p> I need a computer for gaming. Which I can also use for school work. </p>
-<p> For this, I want accesories for gaming. I need surround sound headphones, a keyboard, a mouse and of course, a monitor. I prefer it to be 1080p with a refresh rate of 144Hz. </p>
+<style>
+table, th, td {border: 8px solid black;}
+</style>
+<table style="width:100%">
+<tr>
+<th>Computer</th>
+<th>Operating System</th>
+<th>Processor</th>
+<th>Graphics Card</th>
+<th>Memory</th>
+<th>Hard Drive</th>
+<th>Price (CAD)</th>
+<th>Peripherals</th>
+</tr>
+<tr>
+<td>Alienware Area 51</td>
+<td>Windows 10</td>
+<td>Intel Core i7-6950X (10 cores, 25MB Cache, Turbo Boost Max 3.0, Overclocked up to 3.8 GHz)</td>
+<td>Dual NVIDIA Geforce GTX TITAN X with 12 GB GDDR5 each (NVIDIA SLI ENABLED)</td>
+<td>64GB Quad Channel DDr4 at 2400MHz</td>
+<td>512GB SSD 6Gb/s Main + 3x 4TB 5400RPM SATA 6Gb/s Storage</td>
+<td>7,879.99</td>
+<td>Mouse, Keyboard, Headphones, Monitor</td>
+</tr>
 
-</body>
-
-</html>
+</table>
