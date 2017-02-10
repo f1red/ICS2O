@@ -9,9 +9,22 @@
 <h1> Goal </h1>
 <p>Cory is looking for a gaming computer. It has to be extremely powerful, and money is not an issue to him.</p>
 <style>
-table, th, td {border: 8px solid black;}
+table, td, th {    
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 15px;
+}
 </style>
 <table style="width:100%">
+
 <tr>
 <th>Computer</th>
 <th>Operating System</th>
