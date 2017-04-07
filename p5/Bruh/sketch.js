@@ -1,6 +1,7 @@
 function setup() {
-  createCanvas(1920, 1080);
+  createCanvas(6969, 6969);
 }
+background (0, 0, 0);
 draw = function() {
     if (mouseIsPressed) {
     noStroke ();
