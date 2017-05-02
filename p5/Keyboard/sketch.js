@@ -24,22 +24,22 @@ function draw() {
 	//right arrow
 	if (keyIsDown(RIGHT_ARROW)) {
 		X = X + speedX;
-		speedX = speedX + 0.55;
+		speedX = speedX + 0.35;
 	}
 	//left arrow
 	if (keyIsDown(LEFT_ARROW)) {
 		X = X - speedX;
-		speedX = speedX + 0.55;
+		speedX = speedX + 0.35;
 	}
 	//up arrow
 	if (keyIsDown(UP_ARROW)) {
 		Y = Y - speedY;
-		speedY = speedY + 0.55;
+		speedY = speedY + 0.35;
 	}
 	//down arrow
 	if (keyIsDown(DOWN_ARROW)) {
 		Y = Y + speedY;
-		speedY = speedY + 0.55;
+		speedY = speedY + 0.35;
 	}
 
 }
