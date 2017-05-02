@@ -4,7 +4,7 @@ var Y = 200;
 var speedX = 0;
 var speedY = 0;
 function setup() {
-  createCanvas(1500, 1020);
+  createCanvas(720, 720);
 }
 
 function draw() {
