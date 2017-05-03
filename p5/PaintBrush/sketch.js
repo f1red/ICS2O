@@ -1,7 +1,7 @@
 	var drawColor;
 
 	function setup() {
-		createCanvas(640, 480);
+		createCanvas(1080, 1080);
 		background (0, 0, 0);
 		drawColor = color (255, 255, 255);
 	}
