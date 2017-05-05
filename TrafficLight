@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Traffic Lights</title>
+<style>
+body { 
+	background-image: url("http://wallpaper-gallery.net/images/white-wallpaper/white-wallpaper-21.jpg")
+}
+h1 {
+	text-align:center;
+	background-color:black;
+	color:#41a0f4;
+	font-size: 60px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+li {
+    float: left;
+}
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: #41a0f4;
+}
+li.dropdown {
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+</style>
+</head>
+
+<body>
+<p>Green, yellow and red, the colors used for traffic lights. These lights control traffic and are essential in our modern day lives. It would be a mess without these signals to guide us when and when not to go. They are important for both pedestrians and drivers as they prevent accidents (if followed correctly). The lights pattern should be timed differently depending on the traffic (will be explained in next paragraph).<br>Timing is key for traffic lights. It is crucial that one side will be going while the other is red, signaling to stop. The yellow light should come before the red light, giving drivers a warning a red light is incoming to prepare them to slow down, or to pass the light depending on their situation. It could be useful if the green lights did not turn on the exact same time the red lights turned on to let incoming drivers slow down, or barely pass the yellow light. This is not a major concern in all cases as cars take time to accelerate, but is still important when cars are already up to speed passing the new green light. Pedestrians should be warned in advance when the light is about to change to yellow. The timers count down to the traffic lights yellow signal. This allows the pedestrian know when it is a good or not a good time to cross. The button for pedestrians does not change the timing of the stop lights, but indicates when the pedestrian should walk when it is a green light. Roads that are less occupied with pedestrians and cars require you to press the button to cross as some stop lights only turn red when they detect a car waiting to go. The timing on the green lights of roads are different depending on how busy the road is. Evidently, the road with more cars will have a longer green light and a shorter red light. We can take Baseline as an example. The green lights on Baseline rd. are almost always longer than the other opposite roads. There are also situations where a left turning left is needed. The yellow light will always be 3 seconds before turning red. This means that only one direction will be green and the other 3 or 2 will be red. This causes that direction to turn green earlier. Different places will have different timing for their stop lights.</p>
+	
+</body>
+</html>
