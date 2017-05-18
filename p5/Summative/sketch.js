@@ -17,7 +17,7 @@ var bspeedX = 3;
 var bspeedY = 3;
 
 function setup() {
-  createCanvas(640, 480);
+  createCanvas(500, 800);
 }
 
 function draw() {
@@ -27,7 +27,21 @@ function draw() {
     background (255, 255, 255);
     //board
     noFill();
-    ellipse (200, 200, 150, 150); //middle of canvas **************
+	stroke(0, 0, 0);
+	strokeWeight(20);
+	//borders
+	line(0, 0, 800, 0); 
+	line(0, 0, 0, 800); 
+	line(500, 800, 500, 0);
+	//line(0, 800, 500, 800); 
+	strokeWeight(5);
+	stroke(255, 0 ,0); // red
+	//circles
+    ellipse (250, 400, 150, 150); //big circle in middle
+	ellipse (250, -50, 250, 250); //big half circle at top
+	ellipse (250, 850, 250, 250); //big half circle at bottom
+	line (0, 400, 175, 400);
+	line (325, 400, 500, 400);
     //stick
     //red
     fill(255, 0, 0);
@@ -52,10 +66,10 @@ function draw() {
     puckY = puckY - speedY;
     //collision with wall for puck
     //if puck hits left wall then bounce back
-    if (puckX > 385) {
+    if (puckX > 485) {
         speedX = -speedX;
     }
-    if (bpuckX > 385) {
+    if (bpuckX > 485) {
         bspeedX = -bspeedX;
     }
     //if puck hits right wall then bounce back
@@ -100,4 +114,7 @@ function draw() {
     X = mouseX;
     Y = mouseY;
 }
+
+
+
 
