@@ -15,13 +15,20 @@ var speedY = 5;
 //speed variable for blue puck
 var bspeedX = 3;
 var bspeedY = 3;
+//score
+var score = 0;
+//font
+var f43 = createFont("fantasy", 20);
 
 function setup() {
+	
   createCanvas(500, 800);
 }
 
 function draw() {
-   //white background
+	fill (255, 0, 0);
+	text("test", 300, 300);
+    //white background
     //red stroke
     stroke(255, 0, 0);
     background (255, 255, 255);
@@ -57,6 +64,11 @@ function draw() {
     ellipse (puckX, puckY, 30, 30);
     //blue puck
     //pure blue
+	fill (255, 0, 0);
+	//score
+	
+	fill(106, 83, 201)
+	text("score: " + score, 35, 35);
     fill(0, 0, 255);
     ellipse (bpuckX, bpuckY, 30, 30);
     //speed for puck
@@ -101,20 +113,20 @@ function draw() {
 			}
 		}
 		*/
-	//collision
-	if ((abs(mouseX - 50 - puckX) < 40) && (abs(mouseY + 58 - puckY) < 18)) {
+	//collision + scoring
+	if ((abs(mouseX - 50 - puckX) <= 40) && (abs(mouseY + 58 - puckY) <= 18)) {
         speedX = round(random(-5, 5)); 
         speedY = -speedY;
+		score = score + 1;
     }
-    if ((abs(mouseX - 50 - bpuckX) < 40) && (abs(mouseY + 58 - bpuckY) < 18)) {
+    if ((abs(mouseX - 50 - bpuckX) <= 40) && (abs(mouseY + 58 - bpuckY) <= 18)) {
         bspeedX = round(random(-7, 7));
         bspeedY = -bspeedY;
+		score = score + 1;
     }
     //stick is controlled by mouse
     X = mouseX;
     Y = mouseY;
 }
-
-
 
 
