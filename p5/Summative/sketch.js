@@ -1,11 +1,10 @@
-/* Player has to hit back balls, ball will be added as time passes by. You can hold a ball by getting it into your stick, but the ball will not move with your stick. ***NOTE: PLEASE FIND OUT HOW TO ADD BALLS USING TIME...*** */
-//NOTE: positions can be changed later to complicate the game
-//variable for handle
+//variables for stick
 var X = 200;
 var Y = 200;
 //variable for puck 
 var puckX = 200;
 var puckY = 200;
+
 //variable for blue puck
 var bpuckX = 100;
 var bpuckY = 50;
@@ -17,65 +16,83 @@ var bspeedX = 3;
 var bspeedY = 3;
 //score
 var score = 0;
-//font
-var f43 = createFont("fantasy", 20);
 
 function setup() {
-	
   createCanvas(500, 800);
 }
 
 function draw() {
-	fill (255, 0, 0);
-	text("test", 300, 300);
-    //white background
-    //red stroke
-    stroke(255, 0, 0);
-    background (255, 255, 255);
+	background (255, 255, 255);//white background
+    stroke(255, 0, 0); //red stroke
+	
     //board
-    noFill();
+	//borders
+	noFill();
 	stroke(0, 0, 0);
 	strokeWeight(20);
-	//borders
 	line(0, 0, 800, 0); 
 	line(0, 0, 0, 800); 
 	line(500, 800, 500, 0);
-	//line(0, 800, 500, 800); 
+	
+	//net
 	strokeWeight(5);
 	stroke(255, 0 ,0); // red
+	line (200, 10, 300, 10);
+	//scoring
+	//black ball will score 3 points
+	if ((puckX >= 200 && puckX <= 300) && (puckY <= 15)) {
+			score = score + 1;
+	}
+	
+	if ((bpuckX >= 200 && bpuckX <= 300) && (bpuckY <= 15)) {
+			score = score + 1;
+	}
+	
 	//circles
     ellipse (250, 400, 150, 150); //big circle in middle
 	ellipse (250, -50, 250, 250); //big half circle at top
 	ellipse (250, 850, 250, 250); //big half circle at bottom
-	line (0, 400, 175, 400);
-	line (325, 400, 500, 400);
-    //stick
-    //red
-    fill(255, 0, 0);
-    //ellipse (mouseX, mouseY, 50, 50);
-    noStroke();
-    quad(mouseX, mouseY, mouseX + 20, mouseY, mouseX, mouseY + 60, mouseX - 20, mouseY + 60);  
-    //this is the part that will hit the puck ***PLEASE ADD BLACK HOCKEY TAPE TO THE STICK**
-    fill(255, 0, 0);
-    rect(mouseX - 50, mouseY + 58, 51, 18);
+	line (0, 400, 175, 400); // first line through the middle
+	line (325, 400, 500, 400); // second line through the middle
+	
+	//handle
+	fill (0, 0, 255); // blue
+	stroke (0, 0, 0); //black
+	ellipse (mouseX, mouseY, 50, 50);
+	
+	//collision with handle
+	//black puck
+	if ((abs(puckX-mouseX)<32.5) && (abs(puckY-mouseY)<32.5)) {
+		speedX = random (-15, 15);
+		speedY = -speedY;
+		
+	}
+	
+	//blue puck
+	if ((abs(bpuckX-mouseX)<32.5) && (abs(bpuckY-mouseY)<32.5)) {
+		bspeedX = random (-7, 7);
+		bspeedY = random (-10, -5);
+		
+	}
+	
     //puck
-    //pure black
-    fill (0, 0, 0);
+	noStroke ();
+    fill (0, 0, 0); //pure black
     ellipse (puckX, puckY, 30, 30);
     //blue puck
-    //pure blue
-	fill (255, 0, 0);
+	fill (255, 0, 0); //pure blue
+	ellipse (bpuckX, bpuckY, 30, 30); 
 	//score
-	
 	fill(106, 83, 201)
-	text("score: " + score, 35, 35);
-    fill(0, 0, 255);
-    ellipse (bpuckX, bpuckY, 30, 30);
+	text("score: " + score, 35, 35); 
+    
+    
     //speed for puck
     bpuckX = bpuckX + bspeedX;
     bpuckY = bpuckY + bspeedY;
     puckX = puckX + speedX;
     puckY = puckY - speedY;
+	
     //collision with wall for puck
     //if puck hits left wall then bounce back
     if (puckX > 485) {
@@ -91,39 +108,15 @@ function draw() {
     if (bpuckX < 15) {
         bspeedX = -bspeedX;
     }
-/*  //if puck hits bottom wall then bounce back
-    if (puckY > 385) {
-        speedY = -speedY;
-    }
-     if (bpuckY > 385) {
-        bspeedY = -bspeedY;
-    }
-    if puck hits top wall then bounce back */
+    //if puck hits top wall then bounce back 
     if (puckY < 15) {
         speedY = -speedY;
     }
     if (bpuckY < 15) {
         bspeedY = -bspeedY;
     }
-/*  back up collision if something goes wrong  if (abs(puckX - mouseX)< 40){
-			if(abs(puckY - mouseY)<40) {
-				//bounce back
-				speedX = -speedX;
-				speedY = -speedY;
-			}
-		}
-		*/
-	//collision + scoring
-	if ((abs(mouseX - 50 - puckX) <= 40) && (abs(mouseY + 58 - puckY) <= 18)) {
-        speedX = round(random(-5, 5)); 
-        speedY = -speedY;
-		score = score + 1;
-    }
-    if ((abs(mouseX - 50 - bpuckX) <= 40) && (abs(mouseY + 58 - bpuckY) <= 18)) {
-        bspeedX = round(random(-7, 7));
-        bspeedY = -bspeedY;
-		score = score + 1;
-    }
+
+
     //stick is controlled by mouse
     X = mouseX;
     Y = mouseY;
