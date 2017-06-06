@@ -17,7 +17,7 @@ var bspeedY = 3;
 var score = 0;
 
 function preload () {
-		img = loadImage("gameover .jpg");
+	img = loadImage("gameover.jpg");
 }
 
 function setup() {
@@ -164,10 +164,10 @@ function draw() {
 	if ((puckY > 765) && (bpuckY > 765)) {
 		fill (0, 0, 0); //black bg
 		rect (0, 0, 500, 800);
-		/*fill(126, 103, 221);
+		fill(126, 103, 221);
 		textSize (100);
 		text ("GAME", 100, 300);
-		text ("OVER", 100, 400);*/
+		text ("OVER", 100, 400);
 		image(img, 0, 0);
 	}
     //stick is controlled by mouse
