@@ -155,15 +155,18 @@ function draw() {
 	if ((bpuckX >= 200 && bpuckX <= 300) && (bpuckY <= 15)) {
 			score = score + 1;
 	}
-	//GAME OVER
-	//if both pucks get out
+	//GAME OVER (if both pucks fall out)
+	function preload () {
+		img = loadImage("gameover .jpg");
+	
 	if ((puckY > 765) && (bpuckY > 765)) {
 		fill (0, 0, 0); //black bg
 		rect (0, 0, 500, 800);
-		fill(126, 103, 221);
+		/*fill(126, 103, 221);
 		textSize (100);
 		text ("GAME", 100, 300);
-		text ("OVER", 100, 400);
+		text ("OVER", 100, 400);*/
+		image(img, 0, 0);
 	}
     //stick is controlled by mouse
     X = mouseX;
@@ -183,3 +186,5 @@ function draw() {
 		Y = 765;
 	}
 }
+
+
