@@ -8,8 +8,8 @@ var puckY = 200;
 var bpuckX = 100;
 var bpuckY = 50;
 //speed variable for puck 
-var speedX = 5;
-var speedY = 5;
+var speedX = 3;
+var speedY = 3;
 //speed variable for blue puck
 var bspeedX = 3;
 var bspeedY = 3;
@@ -22,7 +22,8 @@ function setup() {
 
 function draw() {
 	background (0, 0, 0);//black background
-	    //board
+	
+	//board
 	//circle
 	strokeWeight (10);
 	stroke (255, 0, 0);
@@ -49,8 +50,6 @@ function draw() {
 	stroke(255, 0 ,0); // red
 	line (200, 10, 300, 10);
 	
-	
-	
 	//handle
 	fill (0, 0, 0); // black
 	stroke (0, 0, 255); //blue
@@ -70,7 +69,7 @@ function draw() {
     bpuckX = bpuckX + bspeedX;
     bpuckY = bpuckY + bspeedY;
     puckX = puckX + speedX;
-    puckY = puckY - speedY;
+    puckY = puckY + speedY;
 	
 	//collision with wall for puck
     //if puck hits left wall then bounce back
@@ -103,28 +102,52 @@ function draw() {
 
 	//collision with handle
 	//white puck
-	if ((abs(puckX-X)<32.5) && (abs(puckY-Y)<32.5)) {
-		speedX = random (-15, 15);
-		speedY = -speedY;
-		puckX = puckX + 18;
-		puckY = puckY - 18;
-	}
+	var wx = (puckX-X);
+	var wy = (puckY-Y);
+	if ((abs(wx)<32.5) && (abs(wy)<32.5)) {
+		if (wx < 0) {
+			speedX = random (-5, -3);
+			puckX = puckX - 18;
+		} else {
+			speedX = random (3, 5);
+			puckX = puckX + 18; 
+		}
+		if (wy < 0) {
+			speedY = random (-5, -3);
+			puckY = puckY - 18;
+		} else {
+			speedY = random (3, 5);
+			puckY = puckY + 18;
+		}	
+    }
 	
 	//blue puck
-	if ((abs(bpuckX-X)<32.5) && (abs(bpuckY-Y)<32.5)) {
-		bspeedX = random (-7, 7);
-		bspeedY = random (-10, -5);
-		bpuckX = bpuckX + 18;
-		bpuckY = bpuckY - 18;
-		
+	var bx = (bpuckX-X);
+	var by = (bpuckY-Y);
+	if ((abs(bx)<32.5) && (abs(by)<32.5)) {
+		if (bx < 0) {
+			bspeedX = random (-5, -3);
+			bpuckX = bpuckX - 18;
+		} else {
+			bspeedX = random (3, 5);
+			bpuckX = bpuckX + 18; 
+		}
+		if (by < 0) {
+			bspeedY = random (-5, -3);
+			bpuckY = bpuckY - 18;
+		} else {
+			bspeedY = random (3, 5);
+			bpuckY = bpuckY + 18;
+		}	
     }
+	
 	//score
 	noStroke ();
 	fill(126, 103, 221);
 	text("score: " + score, 35, 35); 
 	
 	//scoring
-	//black ball will score 3 points
+	//pucks get one point
 	if ((puckX >= 200 && puckX <= 300) && (puckY <= 15)) {
 			score = score + 1;
 	}
@@ -132,7 +155,16 @@ function draw() {
 	if ((bpuckX >= 200 && bpuckX <= 300) && (bpuckY <= 15)) {
 			score = score + 1;
 	}
-	
+	//GAME OVER
+	//if both pucks get out
+	if ((puckY > 765) && (bpuckY > 765)) {
+		fill (0, 0, 0); //black bg
+		rect (0, 0, 500, 800);
+		fill(126, 103, 221);
+		textSize (100);
+		text ("GAME", 100, 300);
+		text ("OVER", 100, 400);
+	}
     //stick is controlled by mouse
     X = mouseX;
 	//handle boundaries
@@ -151,4 +183,3 @@ function draw() {
 		Y = 765;
 	}
 }
-
