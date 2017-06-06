@@ -16,6 +16,10 @@ var bspeedY = 3;
 //score
 var score = 0;
 
+function preload () {
+		img = loadImage("gameover .jpg");
+}
+
 function setup() {
   createCanvas(500, 800);
 }
@@ -156,8 +160,6 @@ function draw() {
 			score = score + 1;
 	}
 	//GAME OVER (if both pucks fall out)
-	function preload () {
-		img = loadImage("gameover .jpg");
 	
 	if ((puckY > 765) && (bpuckY > 765)) {
 		fill (0, 0, 0); //black bg
