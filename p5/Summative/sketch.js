@@ -16,10 +16,6 @@ var bspeedY = 3;
 //score
 var score = 0;
 
-function preload () {
-	img = loadImage("gameover.jpg");
-}
-
 function setup() {
   createCanvas(500, 800);
 }
@@ -160,7 +156,7 @@ function draw() {
 			score = score + 1;
 	}
 	//GAME OVER (if both pucks fall out)
-	
+
 	if ((puckY > 765) && (bpuckY > 765)) {
 		fill (0, 0, 0); //black bg
 		rect (0, 0, 500, 800);
@@ -168,7 +164,8 @@ function draw() {
 		textSize (100);
 		text ("GAME", 100, 300);
 		text ("OVER", 100, 400);
-		image(img, 0, 0);
+		text ("score: " + score, 80, 500);
+		
 	}
     //stick is controlled by mouse
     X = mouseX;
