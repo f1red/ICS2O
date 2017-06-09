@@ -133,17 +133,17 @@ function draw() {
 	var wy = (puckY-Y);
 	if ((abs(wx)<32.5) && (abs(wy)<32.5)) {
 		if (wx < 0) {
-			speedX = random (-5, -3);
+			speedX = random (-5, -1);
 			puckX = puckX - 18;
 		} else {
-			speedX = random (3, 5);
+			speedX = random (1, 5);
 			puckX = puckX + 18; 
 		}
 		if (wy < 0) {
-			speedY = random (-5, -3);
+			speedY = random (-5, -1);
 			puckY = puckY - 18;
 		} else {
-			speedY = random (3, 5);
+			speedY = random (3, 1);
 			puckY = puckY + 18;
 		}	
     }
@@ -160,17 +160,17 @@ function draw() {
 	var by = (bpuckY-Y);
 	if ((abs(bx)<32.5) && (abs(by)<32.5)) {
 		if (bx < 0) {
-			bspeedX = random (-5, -3);
+			bspeedX = random (-5, -1);
 			bpuckX = bpuckX - 18;
 		} else {
-			bspeedX = random (3, 5);
+			bspeedX = random (1, 5);
 			bpuckX = bpuckX + 18; 
 		}
 		if (by < 0) {
-			bspeedY = random (-5, -3);
+			bspeedY = random (-5, -1);
 			bpuckY = bpuckY - 18;
 		} else {
-			bspeedY = random (3, 5);
+			bspeedY = random (1, 5);
 			bpuckY = bpuckY + 18;
 		}	
     }
@@ -200,13 +200,19 @@ function draw() {
 
 	if ((puckY > 765) && (bpuckY > 765)) {
 		fill (0, 0, 0); //black bg
-		rect (0, 0, 500, 800);
+		rect (0, 0, 500, 800); //rectangle used to cover board
 		fill(126, 103, 221);
 		textSize (100);
-		text ("GAME", 100, 300);
-		text ("OVER", 100, 400);
+		fill (33, 237, 80); //green
+		text ("GAME", 100, 200);
+		text ("OVER", 100, 300);
+		textSize (20);
+		fill (212, 55, 239);// pink
+		text ("You just took an L... It's time to BOUNCE BACK!", 50, 400);
+		fill (30, 108, 234); //blue
+		textSize (100);
 		text ("score: " + score, 80, 500);
-		fill (240, 0, 0);
+		fill (255, 45, 49); //red
 		rect (165, 545, 200, 70);
 		textSize (50);
 		fill (0, 0, 0);
@@ -236,7 +242,6 @@ function draw() {
 		Y = 765;
 	}
 }
-
 
 
 
