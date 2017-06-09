@@ -8,15 +8,16 @@ var puckY = 200;
 var bpuckX = 100;
 var bpuckY = 50;
 //speed variable for puck 
-var speedX = 3;
-var speedY = 3;
+var speedX = 4;
+var speedY = 4;
 //speed variable for blue puck
-var bspeedX = 3;
-var bspeedY = 3;
+var bspeedX = 4;
+var bspeedY = 4;
 //score
 var score = 0;
 
 function setup() {
+	frameRate (300);
   createCanvas(500, 800);
 }
 
@@ -49,10 +50,14 @@ function draw() {
 	strokeWeight(5);
 	stroke(255, 0 ,0); // red
 	line (200, 10, 300, 10);
+	line (200, 10, 200, 20);
+	line (300, 10, 300, 20);
 	
 	//handle
+	//handle variables
+	var handleColor = color (0, 0, 255);
 	fill (0, 0, 0); // black
-	stroke (0, 0, 255); //blue
+	stroke (handleColor); //blue
 	strokeWeight (10);
 	ellipse (X, Y, 35, 35);
 	
@@ -99,7 +104,29 @@ function draw() {
         bspeedY = -bspeedY;
 		bpuckY = 15;
     }
-
+	
+	//puck collion with post
+	if ((puckX > 177.5) && (puckX < 217.5) && (puckY < 27.5)) {
+		speedX = -speedX;
+		speedY = -speedY;
+	}
+	
+	if ((bpuckX > 177.5) && (bpuckX < 217.5) && (bpuckY < 27.5)) {
+		bspeedX = -bspeedX;
+		bspeedY = -bspeedY;
+	}
+	
+	if ((puckX > 277.5) && (puckX < 317.5) && (puckY < 27.5)) {
+		speedX = -speedX;
+		speedY = -speedY;
+	}
+	
+	if ((bpuckX > 277.5) && (bpuckX < 317.5) && (bpuckY < 27.5)) {
+		bspeedX = -bspeedX;
+		bspeedY = -bspeedY;
+	}
+	
+	
 	//collision with handle
 	//white puck
 	var wx = (puckX-X);
@@ -120,6 +147,13 @@ function draw() {
 			puckY = puckY + 18;
 		}	
     }
+	/*//*****************collision puck to puck
+	if ((abs(puckX - bpuckX) < 36) && (abs(puckY - bpuckY) < 36)) {
+		speedX = -speedX;
+		speedY = -speedY;
+		bspeedX = -bspeedX;
+		bspeedY = -bspeedY;
+	}  */
 	
 	//blue puck
 	var bx = (bpuckX-X);
@@ -143,18 +177,25 @@ function draw() {
 	
 	//score
 	noStroke ();
-	fill(126, 103, 221);
+	textSize (20);
+	fill(255, 255, 255);
 	text("score: " + score, 35, 35); 
 	
 	//scoring
 	//pucks get one point
 	if ((puckX >= 200 && puckX <= 300) && (puckY <= 15)) {
-			score = score + 1;
+			score +=1;
+			speedX += 1;
+			speedY += 1;
 	}
 	
 	if ((bpuckX >= 200 && bpuckX <= 300) && (bpuckY <= 15)) {
-			score = score + 1;
+			score += 1;
+			bspeedX += 1;
+			bspeedY += 1;
 	}
+
+	
 	//GAME OVER (if both pucks fall out)
 
 	if ((puckY > 765) && (bpuckY > 765)) {
@@ -165,7 +206,17 @@ function draw() {
 		text ("GAME", 100, 300);
 		text ("OVER", 100, 400);
 		text ("score: " + score, 80, 500);
-		
+		fill (240, 0, 0);
+		rect (165, 545, 200, 70);
+		textSize (50);
+		fill (0, 0, 0);
+		text ("Restart", 180, 600);
+	}
+	//restart button
+	if ((mouseIsPressed) && (mouseY < 615) && (mouseY > 545) && (puckY > 765) && (bpuckY > 765) && (mouseX > 165) && (mouseX <365)) {
+		puckY = 100;
+		bpuckY = 100;
+		score = 0;
 	}
     //stick is controlled by mouse
     X = mouseX;
@@ -185,5 +236,7 @@ function draw() {
 		Y = 765;
 	}
 }
+
+
 
 
