@@ -23,8 +23,6 @@ function setup() {
 
 function draw() {
 	background (0, 0, 0);//black background
-	textSize (20);
-	text ("Alanna you're an L", 100, 200);
 	//board
 	//circle
 	strokeWeight (10);
