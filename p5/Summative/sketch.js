@@ -23,13 +23,14 @@ function setup() {
 
 function draw() {
 	background (0, 0, 0);//black background
-	
+	textSize (20);
+	text ("Alanna you're an L", 100, 200);
 	//board
 	//circle
 	strokeWeight (10);
 	stroke (255, 0, 0);
 	noFill() ;
-    ellipse (250, 400, 150, 150); //big circle in middle
+    	ellipse (250, 400, 150, 150); //big circle in middle
 	ellipse (250, -50, 250, 250); //big half circle at top
 	ellipse (250, 850, 250, 250); //big half circle at bottom
 	line (0, 400, 175, 400); // first line through the middle
@@ -133,17 +134,17 @@ function draw() {
 	var wy = (puckY-Y);
 	if ((abs(wx)<32.5) && (abs(wy)<32.5)) {
 		if (wx < 0) {
-			speedX = random (-5, -1);
+			speedX = random (-5, -4);
 			puckX = puckX - 18;
 		} else {
-			speedX = random (1, 5);
+			speedX = random (4, 5);
 			puckX = puckX + 18; 
 		}
 		if (wy < 0) {
-			speedY = random (-5, -1);
+			speedY = random (-5, -4);
 			puckY = puckY - 18;
 		} else {
-			speedY = random (3, 1);
+			speedY = random (3, 5);
 			puckY = puckY + 18;
 		}	
     }
@@ -160,17 +161,17 @@ function draw() {
 	var by = (bpuckY-Y);
 	if ((abs(bx)<32.5) && (abs(by)<32.5)) {
 		if (bx < 0) {
-			bspeedX = random (-5, -1);
+			bspeedX = random (-5, -4);
 			bpuckX = bpuckX - 18;
 		} else {
-			bspeedX = random (1, 5);
+			bspeedX = random (4, 5);
 			bpuckX = bpuckX + 18; 
 		}
 		if (by < 0) {
-			bspeedY = random (-5, -1);
+			bspeedY = random (-5, -4);
 			bpuckY = bpuckY - 18;
 		} else {
-			bspeedY = random (1, 5);
+			bspeedY = random (4, 5);
 			bpuckY = bpuckY + 18;
 		}	
     }
