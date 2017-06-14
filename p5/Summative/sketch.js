@@ -1,4 +1,3 @@
-//EXPAND NET HITBOX
 
 //variables for handle
 var X = 200;
@@ -27,6 +26,7 @@ function setup() {
 
 function draw() {
 	background (0, 0, 0);//black background
+	
 	if (status == 0) {
 		statusStart ();
 	} else if (status == 1) {
@@ -97,26 +97,26 @@ function drawNet () {
 	line (190, 10, 190, 20); //right post
 	line (310, 10, 310, 20); //left post
 	
-	//puck collion with post
-		if ((puckX > 157.5) && (puckX < 217.5) && (puckY < 27.5)) {
+	/*//puck collion with post
+		if ((puckX > 187.5) && (puckX < 192.5) && (puckY <= 37.5)) {
 			speedX = -speedX;
 			speedY = -speedY;
 		}
 		
-		if ((bpuckX > 157.5) && (bpuckX < 217.5) && (bpuckY < 27.5)) {
+		if ((bpuckX > 187.5) && (bpuckX < 192.5) && (bpuckY < 37.5)) {
 			bspeedX = -bspeedX;
 			bspeedY = -bspeedY;
 		}
 		
-		if ((puckX > 277.5) && (puckX < 317.5) && (puckY < 27.5)) {
+		if ((puckX > 307.5) && (puckX < 312.5) && (puckY < 37.5)) {
 			speedX = -speedX;
 			speedY = -speedY;
 		}
 		
-		if ((bpuckX > 277.5) && (bpuckX < 317.5) && (bpuckY < 27.5)) {
+		if ((bpuckX > 307.5) && (bpuckX < 312.5) && (bpuckY < 37.5)) {
 			bspeedX = -bspeedX;
 			bspeedY = -bspeedY;
-		}
+		}*/
 		
 }
 
@@ -127,13 +127,13 @@ function drawScore () {
 	fill(255, 255, 255);
 	text("score: " + score, 35, 35); 
 		//pucks get one point
-		if ((puckX >= 200 && puckX <= 300) && (puckY <= 15)) {
+		if ((puckX >= 185 && puckX <= 315) && (puckY == 15)) {
 				score +=1;
 				speedX += 1;
 				speedY += 1;
 		}
 		
-		if ((bpuckX >= 200 && bpuckX <= 300) && (bpuckY <= 15)) {
+		if ((bpuckX >= 185 && bpuckX <= 315) && (bpuckY == 15)) {
 				score += 1;
 				bspeedX += 1;
 				bspeedY += 1;
@@ -228,7 +228,7 @@ function drawPucks () {
 				bspeedY = random (4, 5);
 				bpuckY = bpuckY + 18;
 			}	
-		}
+		}	
 }
 
 //handle
@@ -301,5 +301,3 @@ function statusRestart () {
 		score = 0;
 	}
 }
-
-
