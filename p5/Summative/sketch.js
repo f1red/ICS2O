@@ -82,7 +82,7 @@ function drawCircles () {
 	strokeWeight (10);
 	stroke (255, 0, 0);
 	noFill() ;
-    ellipse (250, 400, 150, 150); //big circle in middle
+   	 ellipse (250, 400, 150, 150); //big circle in middle
 	ellipse (250, -50, 250, 250); //big half circle at top
 	ellipse (250, 850, 250, 250); //big half circle at bottom
 	line (0, 400, 175, 400); // first line through the middle
@@ -241,9 +241,6 @@ function drawHandle () {
 	stroke (0, 0, 255); //blue
 	strokeWeight (10);
 	ellipse (X, Y, 35, 35); //circle
-	if (Y < 200) {
-		Y = 200;
-	}
 }
 
 //play game
@@ -264,8 +261,8 @@ function playGame() {
 		
 		Y = mouseY;
 		//handle boundaries
-		if (Y <35) {
-			Y = 35;
+		if (Y < 200) {
+			Y = 200;
 		}
 		if (Y > 765) {
 			Y = 765;
