@@ -241,6 +241,9 @@ function drawHandle () {
 	stroke (0, 0, 255); //blue
 	strokeWeight (10);
 	ellipse (X, Y, 35, 35); //circle
+	if (Y < 200) {
+		Y = 200;
+	}
 }
 
 //play game
