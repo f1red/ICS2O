@@ -75,7 +75,7 @@ function drawBorders() {
 	line(0, 0, 0, 800); 
 	stroke(243, 243, 21); //neon yellow stroke
 	line(500, 800, 500, 0);
-	stroke(240, 240, 240;
+	stroke(255, 0, 0;
 	line (0, 200, 0, 500);
 }
 	
