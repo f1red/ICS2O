@@ -75,8 +75,8 @@ function drawBorders() {
 	line(0, 0, 0, 800); 
 	stroke(243, 243, 21); //neon yellow stroke
 	line(500, 800, 500, 0);
-	stroke(255, 0, 0;
-	line (0, 200, 0, 500);
+	stroke(240, 240, 240);
+	line (0, 100, 500, 100);
 }
 	
 //circles 
@@ -261,8 +261,8 @@ function playGame() {
 		
 		Y = mouseY;
 		//handle boundaries
-		if (Y < 200) {
-			Y = 200;
+		if (Y < 100) {
+			Y = 100;
 		}
 		if (Y > 765) {
 			Y = 765;
