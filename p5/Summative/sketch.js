@@ -131,12 +131,16 @@ function drawScore () {
 				score +=1;
 				speedX += 1;
 				speedY += 1;
+				puckX = 250;
+				puckY = 400;
 		}
 		
 		if ((bpuckX >= 185 && bpuckX <= 315) && (bpuckY == 15)) {
 				score += 1;
 				bspeedX += 1;
 				bspeedY += 1;
+				bpuckX = 250;
+				bpuckY = 400;
 		}
 		
 		
