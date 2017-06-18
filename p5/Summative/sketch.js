@@ -287,10 +287,6 @@ function playGame() {
 //restart screen 
 function statusRestart () {
 	//status 2
-	puckX = 200;
-	puckY = 200;
-	bpuckX = 200;
-	bpuckY = 200;
 	fill (0, 0, 0); //black bg
 	rect (0, 0, 500, 800); //rectangle used to cover board
 	fill(126, 103, 221);
