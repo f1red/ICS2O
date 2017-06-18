@@ -270,6 +270,11 @@ function playGame() {
 	
 		
 	//puck fall out = game over
+	/********************* UNSTAR THIS IF RESTART BUTTON STILL DOESN'T WORK AND DELETE THE CODE AFTER*************
+	if ((puckY > 765) && (bpuckY > 765)) {
+		status += 1;
+	}
+	*/
 	if (puckY > 765) {
 		status += 1;
 	}
