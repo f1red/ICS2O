@@ -272,10 +272,10 @@ function playGame() {
 		
 	//puck fall out = game over
 	if (puckY > 765) {
-		status += 1;
+		status = status + 1;
 	}
 	if (bpuck > 765) {
-		status += 1;
+		status = status + 1;
 	}
 
 }
