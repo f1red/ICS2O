@@ -40,15 +40,15 @@ function statusStart () {
 	//status 0
 	//starting screen 
 	textSize(140);
-	fill (0, 255, 0);
+	fill (0, 255, 0); //green
 	text ("Bounce", 5, 250);
 	text ("Back", 75, 400);
 	fill (33, 237, 80); //green
-	rect (155, 645, 200, 70);
+	rect (155, 645, 200, 70); //button to start game
 	textSize (50);
 	fill (255, 255, 255);
 	text ("Start >", 190, 700);
-	if ((mouseIsPressed) && (mouseY < 715) && (mouseY > 645) && (mouseX > 165) && (mouseX <365)) {
+	if ((mouseIsPressed) && (mouseY < 715) && (mouseY > 645) && (mouseX > 165) && (mouseX <365)) { //if statement to start game
 		status = status + 1;
 	}
 }
@@ -151,7 +151,7 @@ function drawPucks () {
 	//white puck
 	noStroke ();
 	fill (255, 255, 255); //white
-    	ellipse (puckX, puckY, 30, 30);
+    ellipse (puckX, puckY, 30, 30);
 	//movement
 	puckX = puckX + speedX;
 	puckY = puckY + speedY;
@@ -270,17 +270,20 @@ function playGame() {
 	
 		
 	//puck fall out = game over
-	/********************* UNSTAR THIS IF RESTART BUTTON STILL DOESN'T WORK AND DELETE THE CODE AFTER*************
+	/*UNSTAR THIS IF RESTART BUTTON STILL DOESN'T WORK AND DELETE THE CODE UNDER THIS AFTER
 	if ((puckY > 765) && (bpuckY > 765)) {
-		status += 1;
-	}
-	*/
+		statusRestart ();
+	}*/
+	
 	if (puckY > 765) {
-		status += 1;
+		statusRestart ();
 	}
 	if (bpuckY > 765) {
-		status += 1;
+		statusRestart ();
 	}
+	
+	
+	
 
 }
 
@@ -307,7 +310,7 @@ function statusRestart () {
 	text ("Restart", 180, 600);
 
 	//restart button
-	if ((mouseIsPressed) && (mouseY < 615) && (mouseY > 545) && (puckY > 765) && (bpuckY > 765) && (mouseX > 165) && (mouseX <365)) {
+	if ((mouseIsPressed) && (mouseY < 615) && (mouseY > 545) && (mouseX > 165) && (mouseX <365)) {
 		status = 1;
 		puckY = 100;
 		bpuckY = 100;
