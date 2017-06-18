@@ -77,7 +77,7 @@ function drawBorders() {
 	line(500, 800, 500, 0);
 	strokeWeight(2.5);
 	stroke(20, 20, 40);
-	line (0, 110, 500, 110);
+	line (0, 80, 500, 80);
 }
 	
 //circles 
@@ -85,7 +85,7 @@ function drawCircles () {
 	strokeWeight (10);
 	stroke (255, 0, 0);
 	noFill() ;
-   	 ellipse (250, 400, 150, 150); //big circle in middle
+   	ellipse (250, 400, 150, 150); //big circle in middle
 	ellipse (250, -50, 250, 250); //big half circle at top
 	ellipse (250, 850, 250, 250); //big half circle at bottom
 	line (0, 400, 175, 400); // first line through the middle
@@ -135,6 +135,7 @@ function drawScore () {
 				puckX = 250;
 				puckY = 400;
 				speedY = 0;
+				speedX = random (5,10);
 		}
 		
 		if ((bpuckX >= 185 && bpuckX <= 315) && (bpuckY == 15)) {
@@ -142,6 +143,7 @@ function drawScore () {
 				bpuckX = 250;
 				bpuckY = 400;
 				bspeedY = 0;
+				speedX = random (5,10);
 		}
 		
 		
