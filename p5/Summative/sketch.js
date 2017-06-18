@@ -273,7 +273,7 @@ function playGame() {
 	if (puckY > 765) {
 		status += 1;
 	}
-	if (bpuck > 765) {
+	if (bpuckY > 765) {
 		status += 1;
 	}
 
