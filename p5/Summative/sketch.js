@@ -129,32 +129,30 @@ function drawScore () {
 	textSize (20);
 	fill(255, 255, 255);
 	text("score: " + score, 35, 35); 
-		//pucks get one point
-		if ((puckX >= 185 && puckX <= 315) && (puckY == 15)) {
-				score +=1;
-				puckX = 250;
-				puckY = 400;
-				speedY = 0;
-				speedX = random (5,10);
-		}
+	//pucks get one point
+	if ((puckX >= 185 && puckX <= 315) && (puckY == 15)) {
+			score +=1;
+			puckX = 250;
+			puckY = 400;
+			speedY = 0;
+			speedX = random (5,10);
+	}
 		
-		if ((bpuckX >= 185 && bpuckX <= 315) && (bpuckY == 15)) {
-				score += 1;
-				bpuckX = 250;
-				bpuckY = 400;
-				bspeedY = 0;
-				speedX = random (5,10);
-		}
-		
-		
+	if ((bpuckX >= 185 && bpuckX <= 315) && (bpuckY == 15)) {
+			score += 1;
+			bpuckX = 250;
+			bpuckY = 400;
+			bspeedY = 0;
+			speedX = random (5,10);
+	}		
 }
 
 //pucks
 function drawPucks () {
 	//white puck
 	noStroke ();
-    fill (255, 255, 255); //white
-    ellipse (puckX, puckY, 30, 30);
+	fill (255, 255, 255); //white
+    	ellipse (puckX, puckY, 30, 30);
 	//movement
 	puckX = puckX + speedX;
 	puckY = puckY + speedY;
