@@ -33,7 +33,7 @@ function draw() {
 		playGame ();
 	} else {
 		statusRestart ();
-    }
+    	}
 }
 
 //start screen
