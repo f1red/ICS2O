@@ -1,4 +1,3 @@
-
 //variables for handle
 var X = 200;
 var Y = 200;
@@ -272,10 +271,10 @@ function playGame() {
 		
 	//puck fall out = game over
 	if (puckY > 765) {
-		status = status + 1;
+		status += 1;
 	}
 	if (bpuck > 765) {
-		status = status + 1;
+		status += 1;
 	}
 
 }
