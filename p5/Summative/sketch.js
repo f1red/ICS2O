@@ -252,31 +252,32 @@ function playGame() {
 	drawBoard ();
 	
 	//handle boundaries
-		X = mouseX;
-		if (X < 35) {
-			X = 35;
-		}
-		if (X > 465) {
-			X = 465;
-		}
-		
-		Y = mouseY;
-		//handle boundaries
-		if (Y < 100) {
-			Y = 100;
-		}
-		if (Y > 765) {
-			Y = 765;
-		}
+	X = mouseX;
+	if (X < 35) {
+		X = 35;
+	}
+	if (X > 465) {
+		X = 465;
+	}
+	
+	Y = mouseY;
+	//handle boundaries
+	if (Y < 100) {
+		Y = 100;
+	}
+	if (Y > 765) {
+		Y = 765;
+	}
 	
 		
 	//puck fall out = game over
-	if ((puckY > 765) {
+	if (puckY > 765) {
 		status += 1;
 	}
 	if (bpuck > 765) {
 		status += 1;
 	}
+
 }
 
 //restart screen 
