@@ -3,16 +3,16 @@ var X = 200;
 var Y = 200;
 //variable for puck 
 var puckX = 200;
-var puckY = 200;
+var puckY = 100;
 //variable for blue puck
-var bpuckX = 100;
+var bpuckX = 400;
 var bpuckY = 50;
 //speed variable for puck 
-var speedX = 4;
-var speedY = 4;
+var speedX = 2;
+var speedY = 2;
 //speed variable for blue puck
-var bspeedX = 4;
-var bspeedY = 4;
+var bspeedX = 2;
+var bspeedY = 2;
 //score
 var score = 0;
 //status
@@ -133,7 +133,7 @@ function drawScore () {
 			score += 1;
 			puckX = 250; //spawns puck at centre
 			puckY = 400;
-			speedY = 1;
+			speedY = 0.75;
 			speedX = random (7.5,15);
 	}
 		
@@ -141,7 +141,7 @@ function drawScore () {
 			score += 1;
 			bpuckX = 250; //spawns puck at centre
 			bpuckY = 400;
-			bspeedY = 1;
+			bspeedY = 0.75;
 			speedX = random (7.5,15);
 	}		
 }
@@ -151,7 +151,7 @@ function drawPucks () {
 	//white puck
 	noStroke ();
 	fill (255, 255, 255); //white
-    	ellipse (puckX, puckY, 30, 30);
+    ellipse (puckX, puckY, 30, 30);
 	//movement
 	puckX = puckX + speedX;
 	puckY = puckY + speedY;
@@ -250,6 +250,11 @@ function playGame() {
 	//board
 	drawBoard ();
 	
+	// pause game
+	if (keyIsDown(80)) { //if p is pressed return to starting screen
+		status = 0;
+	}
+	
 	//handle boundaries
 	X = mouseX;
 	if (X < 35) {
@@ -313,3 +318,4 @@ function statusRestart () {
 		score = 0;
 	}
 }
+	
