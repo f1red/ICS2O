@@ -19,12 +19,12 @@ var score = 0;
 var status =  0;
 
 function setup() {
-	frameRate (300);
+	frameRate (300); //max framerate (if pc can handle)
 	createCanvas(500, 800);
 }
 
 function draw() {
-	background (0, 0, 0);//black background
+	background (0, 0, 0); //black background
 	
 	if (status == 0) {
 		statusStart ();
@@ -47,7 +47,7 @@ function statusStart () {
 	rect (155, 645, 200, 70); //button to start game
 	textSize (50);
 	fill (255, 255, 255); //white
-	text ("Start >", 190, 700);
+	text ("Start >", 190, 700); 
 	if ((mouseIsPressed) && (mouseY < 715) && (mouseY > 645) && (mouseX > 165) && (mouseX <365)) { //if statement to start game
 		status += 1;
 	} //if mouse is pressed, play game
