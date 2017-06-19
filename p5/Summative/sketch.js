@@ -41,6 +41,7 @@ function draw() {
 function statusStart () {
 	//status 0
 	//starting screen 
+	noStroke();
 	textSize(140);
 	fill (0, 255, 0); //green
 	text ("Bounce", 37, 250);
@@ -53,7 +54,37 @@ function statusStart () {
 	if ((mouseIsPressed) && (mouseY < 715) && (mouseY > 645) && (mouseX > 165) && (mouseX <365)) { //if statement to start game
 		status += 1;
 	} //if mouse is pressed, play game
+	fill (242, 230, 0); // yellow
+	rect (155, 515, 200, 70); //button to see instructions
+	fill (0, 150, 230); //blue
+	textSize (25);
+	text ("hover over for instructions", 185, 540, 195);
+	
+	if ((mouseButton) && (mouseY < 585) && (mouseY > 515) && (mouseX > 165) && (mouseX <365)) { //hover over to go to instructions
+		instructions(); 
+	} //if mouse is pressed display instructions
 }
+
+function instructions () {
+	//starting screen
+	fill (0, 0, 0); //black bg
+	rect (0, 0, 500, 800);
+	textSize (40);
+	stroke (255, 255, 255);
+	textFont ("anton");
+	text ("The goal: score as many pucks into the nets as possible using your mouse. The puck will spawn in the centre of the arena once you have scored. There is a dark grey line at the top of the arena that you cannot hit the pucks in. Press 'P' to pause the game. For more information, read the requirements of the game above.", 0, 50, 500);
+	noStroke ();
+	fill (33, 237, 80); //green
+	rect (155, 645, 200, 70); //button to start game
+	textSize (50);
+	fill (255, 255, 255); //white
+	textFont ("fantasy");
+	text ("Start >", 190, 700); 
+	if ((mouseIsPressed) && (mouseY < 715) && (mouseY > 645) && (mouseX > 165) && (mouseX <365)) { //if statement to start game
+		status += 1;
+	} //if mouse is pressed, play game
+}
+
 
 //board 
 function drawBoard () {
@@ -318,25 +349,28 @@ function statusRestart () {
 		bpuckY = 100;
 		score = 0;
 	}
-	
 }
 
 function pauseGame () {
-	//status 0
-	//starting screen
+	//pause screen
 	textSize(124);
 	fill (0, 255, 0); //green
 	text ("GAME", 110, 250);
 	text ("PAUSED", 60, 370);
 	fill (33, 237, 80); //green
 	rect (155, 645, 200, 70); //button to start game
+	fill (255, 255, 255);
+	textSize (50);
+	text ("Resume", 165, 700); 
 	fill (30, 108, 234); //blue
 	textSize (70);
 	text ("score: " + score, 140, 500);
 	textSize (50);
 	fill (255, 255, 255); //white
-	text ("Resume", 165, 700); 
+	
 	if ((mouseIsPressed) && (mouseY < 715) && (mouseY > 645) && (mouseX > 165) && (mouseX <365)) { //if statement to start game
 		status = 1;
 	} //if mouse is pressed, resume game
-}	
+
+}
+	
