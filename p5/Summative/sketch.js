@@ -46,11 +46,11 @@ function statusStart () {
 	fill (33, 237, 80); //green
 	rect (155, 645, 200, 70); //button to start game
 	textSize (50);
-	fill (255, 255, 255);
+	fill (255, 255, 255); //white
 	text ("Start >", 190, 700);
 	if ((mouseIsPressed) && (mouseY < 715) && (mouseY > 645) && (mouseX > 165) && (mouseX <365)) { //if statement to start game
-		status = status + 1;
-	}
+		status += 1;
+	} //if mouse is pressed, play game
 }
 
 //board 
@@ -75,8 +75,8 @@ function drawBorders() {
 	stroke(243, 243, 21); //neon yellow stroke
 	line(500, 800, 500, 0);
 	strokeWeight(2.5);
-	stroke(20, 20, 40);
-	line (0, 80, 500, 80);
+	stroke(60, 60, 80); //dark grey
+	line (0, 77.7, 500, 77.7); //line that prevents handle from passing
 }
 	
 //circles 
@@ -129,17 +129,17 @@ function drawScore () {
 	fill(255, 255, 255);
 	text("score: " + score, 35, 35); 
 	//pucks get one point
-	if ((puckX >= 185 && puckX <= 315) && (puckY == 15)) {
-			score +=1;
-			puckX = 250;
+	if ((puckX >= 185 && puckX <= 315) && (puckY == 15)) { //if puck goes in net
+			score += 1;
+			puckX = 250; //spawns puck at centre
 			puckY = 400;
 			speedY = 0;
 			speedX = random (5,10);
 	}
 		
-	if ((bpuckX >= 185 && bpuckX <= 315) && (bpuckY == 15)) {
+	if ((bpuckX >= 185 && bpuckX <= 315) && (bpuckY == 15)) { //if puck goes in net
 			score += 1;
-			bpuckX = 250;
+			bpuckX = 250; //spawns puck at centre
 			bpuckY = 400;
 			bspeedY = 0;
 			speedX = random (5,10);
@@ -151,7 +151,7 @@ function drawPucks () {
 	//white puck
 	noStroke ();
 	fill (255, 255, 255); //white
-    ellipse (puckX, puckY, 30, 30);
+    	ellipse (puckX, puckY, 30, 30);
 	//movement
 	puckX = puckX + speedX;
 	puckY = puckY + speedY;
@@ -281,10 +281,6 @@ function playGame() {
 	if (bpuckY > 765) {
 		statusRestart ();
 	}
-	
-	
-	
-
 }
 
 //restart screen 
@@ -298,7 +294,7 @@ function statusRestart () {
 	text ("GAME", 100, 200);
 	text ("OVER", 100, 300);
 	textSize (20);
-	fill (212, 55, 239);// pink
+	fill (212, 55, 239); // pink
 	text ("You just took an L... It's time to BOUNCE BACK!", 50, 400);
 	fill (30, 108, 234); //blue
 	textSize (100);
@@ -310,7 +306,7 @@ function statusRestart () {
 	text ("Restart", 180, 600);
 
 	//restart button
-	if ((mouseIsPressed) && (mouseY < 615) && (mouseY > 545) && (mouseX > 165) && (mouseX <365)) {
+	if ((mouseIsPressed) && (mouseY < 615) && (mouseY > 545) && (mouseX > 165) && (mouseX <365)) { //if button is pressed, play game and pucks start at 100, 100 and resets score
 		status = 1;
 		puckY = 100;
 		bpuckY = 100;
