@@ -133,16 +133,16 @@ function drawScore () {
 			score += 1;
 			puckX = 250; //spawns puck at centre
 			puckY = 400;
-			speedY = 0;
-			speedX = random (5,10);
+			speedY = 1;
+			speedX = random (7.5,15);
 	}
 		
 	if ((bpuckX >= 185 && bpuckX <= 315) && (bpuckY == 15)) { //if puck goes in net
 			score += 1;
 			bpuckX = 250; //spawns puck at centre
 			bpuckY = 400;
-			bspeedY = 0;
-			speedX = random (5,10);
+			bspeedY = 1;
+			speedX = random (7.5,15);
 	}		
 }
 
