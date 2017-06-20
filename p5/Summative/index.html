@@ -83,12 +83,36 @@
 
 
 <body>
-	
-	<h1>Requirements for Video Game</h1>
+	<h1>Requirements for video game</h1>
+		<p><center><b>***It is recommended to close all other applications and tabs to ensure optimal preformance and remember to scroll down all the way to see the whole game***</b></center></p>
+		
 		<h3>Instructions:</h3>
-			<p><b>***It is strongly recommended to close all other applications and tabs to ensure optimal preformance***</b>(for toasters)<br><b>The Goal:</b> Score the pucks into the red net at the top centre, the posts do not interact with the pucks (they are there for a visual). Your mouse will control the handle. Your handle cannot go pass the dark grey line near the top of the board. Each hit in the net counts as 1 (one) point, the ball will then be placed in the middle of the board and be bouncing back and forth sideways;however the ball will be slowly dropping. You have two pucks, and they do not collide with each other, if one of your pucks falls out at the bottom of the arena, the game is over. The goal is to get the highest amount of points. A useful tip is to let the pucks hit your handle, instead of swinging it at the pucks. This increases your accuracy. Press 'P' to pause the game... Good luck! (remember to scroll down all the way to fully view the game, if your screen is too small, zoom out)</p>
-	<h4>Specifics and mechanics of the game</h4>
-		<p>The handle will never leave the canvas of the game, and cannot go pass the dark grey line at the top of the board. There are 3 status of the game, the starting screen, the game, and the ending screen. When the restart button is pressed, the game will resume instantly (it will not lead you to the start screen). The starting scren contains two buttons: one to hover over for the instructions and the other that says "start>" will start the game. While playing the game, you can press 'P' to pause the game, at the pause menu, you will have the option to resume the game with a button. The balls always start at the upper half of the arena;however the X coordinates are randomly (to be exact they are not random, the X coordinate is changing in the background). The score is on the top left of the arena, it will display how many points you have. The balls do not collide with each other. The ball will be hit in the direction you move the handle to hit the puck;however, the amount of force used will not determine the speed the puck will travel at. The pucks have two X speeds, 4 and 5, and the pucks have a set Y speed of 6 which will not be affected when hit by the handle unless when it is scored in the net: the speedY will increase by 1. </p>
+			<ul>
+				<li>Score as many times as possible in the net</li>
+				<li>Scored pucks spawn at the centre of the arena but <b>will still move</b></li>
+				<li>The game is over when <b>one</b> of your pucks falls out of the arena</li>
+				<li>Your handle cannot pass the dark grey line (located at the top)</li>
+				<li>hint: the ball always goes the same speed when hit by the handle, let the ball hit your handle instead</li>
+			</ul>
+		<h3>Function of the JavaScript</h3>
+			<ul>
+				<li>The handle and pucks will never pass the borders and the handle will never pass the dark grey line located near the top of the arena.</li>
+				<li>The pucks do not collide with each other</li>
+				<li>The pucks always start on the upper half of the arena, and head towards the bottom</li>
+				<li>One point is awarded when you score in the net. The ball will then spawn at the centre of the arena and will bounce back and forth and descend slowly.</li>
+				<li>The amount of force used to hit the pucks will not affect their speed</li>
+				<li>There are 4 status of the game:</li>
+					<ol>
+						<li>Start Screen</li>
+							<p>The title "Bounce Back" will appear in the middle of the screen in a large green "impact" font. Below this will be a hover over button that says "hover over for instructions", when your mouse is over this button, the instructions will appear. Below this button is the "start >" button, if this button is pressed, the game will start.</p>
+						<li>Game</li>
+							<p>The net will be in the top middle, with a half circle around it (the board should look like glow hockey). A dark grey line should be near the top of the arena which does not allow the handle to pass higher than that. The score will be shown at the top left of the arena. During this status, you should be able to press 'P' which allows you to pause the game.</p>
+						<li>Pause</li>
+							<p>The words "GAME PAUSED" will be in big green font in the middle of the screen. Underneath, "score : #" in blue font. The player has an option to resume the game with the button at the bottom middle that says "resume" in white font.</p>
+						<li>End / Restart</li>
+							<p>"GAME OVER" will be displayed in big green font, "You just took an L...", and the score will be displayed in the middle of the game in colors. Underneath all this will be a restart button, will clicked, it will bring the player back straight into the game.</p>
+					</ol>
+			</ul>
 </body>
 	
 
