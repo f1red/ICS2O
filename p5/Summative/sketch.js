@@ -109,7 +109,7 @@ function drawBorders() {
 	line(500, 800, 500, 0);
 	strokeWeight(2.5);
 	stroke(60, 60, 80); //dark grey
-	line (0, 72.7, 500, 72.7); //line that prevents handle from passing
+	line (0, 82.7, 500, 82.7); //line that prevents handle from passing
 }
 	
 //circles 
@@ -299,8 +299,8 @@ function playGame() {
 	
 	Y = mouseY;
 	//handle boundaries
-	if (Y < 95) {
-		Y = 95;
+	if (Y < 105) {
+		Y = 105;
 	}
 	if (Y > 765) {
 		Y = 765;
