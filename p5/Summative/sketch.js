@@ -109,7 +109,7 @@ function drawBorders() {
 	line(500, 800, 500, 0);
 	strokeWeight(2.5);
 	stroke(60, 60, 80); //dark grey
-	line (0, 77.7, 500, 77.7); //line that prevents handle from passing
+	line (0, 72.7, 500, 72.7); //line that prevents handle from passing
 }
 	
 //circles 
@@ -166,7 +166,7 @@ function drawScore () {
 			score += 1;
 			puckX = 250; //spawns puck at centre
 			puckY = 400;
-			speedY = 0.75;
+			speedY = 0.25;
 			speedX = random (7.5,15);
 	}
 		
@@ -174,7 +174,7 @@ function drawScore () {
 			score += 1;
 			bpuckX = 250; //spawns puck at centre
 			bpuckY = 400;
-			bspeedY = 0.75;
+			bspeedY = 0.25;
 			speedX = random (7.5,15);
 	}		
 }
@@ -184,7 +184,7 @@ function drawPucks () {
 	//white puck
 	noStroke ();
 	fill (255, 255, 255); //white
-    ellipse (puckX, puckY, 30, 30);
+    	ellipse (puckX, puckY, 30, 30);
 	//movement
 	puckX = puckX + speedX;
 	puckY = puckY + speedY;
@@ -299,8 +299,8 @@ function playGame() {
 	
 	Y = mouseY;
 	//handle boundaries
-	if (Y < 100) {
-		Y = 100;
+	if (Y < 95) {
+		Y = 95;
 	}
 	if (Y > 765) {
 		Y = 765;
