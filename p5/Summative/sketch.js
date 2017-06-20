@@ -180,7 +180,7 @@ function drawScore () {
 			bpuckX = 250; //spawns puck at centre
 			bpuckY = 400;
 			bspeedY = 0.5;
-			speedX = random (7.5,15);
+			bspeedX = random (7.5,15);
 	}		
 }
 
