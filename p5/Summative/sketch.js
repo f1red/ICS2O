@@ -69,10 +69,15 @@ function instructions () {
 	//starting screen
 	fill (0, 0, 0); //black bg
 	rect (0, 0, 500, 800);
-	textSize (40);
+	textSize (30);
 	stroke (255, 255, 255);
 	textFont ("anton");
-	text ("The goal: score as many pucks into the nets as possible using your mouse. The puck will spawn in the centre of the arena once you have scored. There is a dark grey line at the top of the arena that you cannot hit the pucks in. Press 'P' to pause the game. For more information, read the requirements of the game above.", 0, 50, 500);
+	strokeWeight (2.5);
+	text ("Goal: score as many pucks into the nets as possible using your mouse. The puck will spawn in the centre of the arena once you have scored.", 0, 50, 500);
+	text ("The game is over when one of the pucks falls out of the arena at the bottom", 0, 230, 500);
+	text ("Your handle cannot pass the dark grey line at the top.", 0, 330, 500);
+	text ("Press 'P' to pause the game.", 0, 430, 500);
+	text ("For more info, see the function of the JS.", 0, 550);
 	noStroke ();
 	fill (33, 237, 80); //green
 	rect (155, 645, 200, 70); //button to start game
@@ -184,7 +189,7 @@ function drawPucks () {
 	//white puck
 	noStroke ();
 	fill (255, 255, 255); //white
-    	ellipse (puckX, puckY, 30, 30);
+    ellipse (puckX, puckY, 30, 30);
 	//movement
 	puckX = puckX + speedX;
 	puckY = puckY + speedY;
@@ -371,6 +376,5 @@ function pauseGame () {
 	if ((mouseIsPressed) && (mouseY < 715) && (mouseY > 645) && (mouseX > 165) && (mouseX <365)) { //if statement to start game
 		status = 1;
 	} //if mouse is pressed, resume game
-
 }
 	
